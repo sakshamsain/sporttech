@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="avatar">
+                    <span id="userInitial">S</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <div class="user-info">
+                    <div id="loadingUser" class="loading-skeleton"></div>
+                    <span id="username">Loading...</span>
+                </div>
+                <div class="institution">
+                    <div id="loadingInstitution" class="loading-skeleton"></div>
+                    <span id="college">Loading...</span>
+                </div>
+                <ul>
+                    <li class="active">
+                        <a href="#"><span class="icon">🏅</span>Registered Sports</a>
+                        <span id="sportsCount" class="count">0</span>
+                    </li>
+                    <li><a href="payment.html"><span class="icon">📖</span>payment</a></li>
+                    <li><a href="#"><span class="icon">📖</span>Rule Book</a></li>
+                    <li class="sign-out"><a href="#"><span class="icon">↪️</span>Sign Out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="step active">
+                    <div class="step-icon">🎯</div>
+                    <span>CHOOSE SPORT</span>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📝</div>
+                    <span>GENERAL INFORMATION</span>
+                </div>
+                <div class="step">
+                    <div class="step-icon">👥</div>
+                    <span>ADD TEAM MEMBER</span>
+                </div>
+                <div class="step">
+                    <div class="step-icon">✓</div>
+                    <span>CONFIRM</span>
+                </div>
+            </div>
+
+            <!-- Sports Selection -->
+            <div class="sports-section">
+                <h1>Register for a Sport<span class="required">*</span></h1>
+                <p class="subtitle">Register for One Sport at a time.</p>
+                
+                <div id="sportsGrid" class="sports-grid">
+                    <!-- Sports will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Button to simulate step progression -->
+            <button class="next-step-button">Next Step</button>
+        </main>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="errorToast" class="toast">
+        <span class="toast-message">Error loading data</span>
+    </div>
+
+    <script src="Dashboard.js"></script>
+</body>
+</html>
