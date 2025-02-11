@@ -100,42 +100,4 @@ function showError(message) {
     setTimeout(() => {
         errorToast.classList.remove('show');
     }, 3000);
-}
-
-// Update step progress bar
-function updateStepProgress(currentStep) {
-    const steps = document.querySelectorAll('.progress-bar .step');
-    steps.forEach((step, index) => {
-        if (index < currentStep) {
-            step.classList.add('completed');
-        } else if (index === currentStep) {
-            step.classList.add('active');
-            step.classList.remove('completed');
-        } else {
-            step.classList.remove('active', 'completed');
-        }
-    });
-}
-
-// Example function to simulate step progression
-function goToNextStep() {
-    const currentStep = document.querySelector('.progress-bar .step.active');
-    const nextStep = currentStep.nextElementSibling;
-    if (nextStep) {
-        currentStep.classList.remove('active');
-        currentStep.classList.add('completed');
-        nextStep.classList.add('active');
-    }
-}
-
-// Initialize the dashboard
-async function initDashboard() {
-    await Promise.all([fetchUserData(), fetchSports()]);
-    updateStepProgress(0); // Initialize the first step as active
-}
-
-// Example event listener to simulate step progression
-document.addEventListener('DOMContentLoaded', () => {
-    initDashboard();
-    document.querySelector('.next-step-button').addEventListener('click', goToNextStep);
-});
+};
